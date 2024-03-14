@@ -11,7 +11,7 @@ function OutLelt() {
       <nav className="bg-[#e5e7ebc4] p-[10px] sm:p-4 flex flex-row items-center">
         {/* Weather App title */}
         <h1 className="text-white font-bold lg:text-2xl">
-          <Link to="/" className="font-bold text-white">Weather App</Link>
+          <Link to="WeatherAppReact" className="font-bold text-white">Weather App</Link>
         </h1>
         <div className="flex-1 flex justify-end gap-4 items-center">
           {/* Navigation links */}
