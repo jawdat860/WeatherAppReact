@@ -10,6 +10,7 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import Home from './components/Pages/Home';
+import NotFoundPage from './components/Pages/NotFoundPage'
 import OutLelt from './Outlet/OutLelt';
 
 /**
@@ -45,11 +46,15 @@ function App() {
           element={<SettingsPage onSaveSettings={onSaveSettings} />}
         />
         <Route path="WeatherAppReact/history" element={<ListCitySaved />} />
+         {/* Not Found Route */}
+         <Route path="*" element={<NotFoundPage/>} />
       </Route>
     )
   );
-
-  return <RouterProvider router={route} />;
+  
+  return <RouterProvider router={route} /> ;
+  
+ 
 }
 
 export default App;
