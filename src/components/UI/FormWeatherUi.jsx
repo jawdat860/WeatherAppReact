@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 /**
  * FromWeatherUi component renders a form to input city name and submit for weather data.
@@ -11,20 +11,23 @@ import React from 'react';
 const FromWeatherUi = (props) => {
   return (
     <div>
-      <form onSubmit={props.submit} className="flex flex-col sm:flex-row">
+      <form
+        onSubmit={props.submit}
+        className="flex flex-col sm:flex-row relative"
+      >
         <input
           type="text"
           placeholder="Enter city name"
-          className="border border-gray-300 rounded-md py-2 px-4 sm:mb-0 sm:mr-3 mb-2"
+          className={`outline-none placeholder:text-white bg-[#e5e7ebc4] border ${
+            props.error === "" ? "border-gray-300" : " border-red-600"
+          }  rounded-md py-2 pl-6 pr-4 sm:mb-0 sm:mr-3 mb-2 `}
           value={props.cityInput}
           onChange={props.inputCityHandler}
         />
-        <button
-          type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded-md"
-        >
-          Add City
-        </button>
+        <i className="fa-solid fa-magnifying-glass text-white  absolute bottom-[21px] sm:bottom-[13px] left-1"></i>
+        <span className="block absolute bottom-[-20px] left-1 text-red-700 ">
+          {props.error}
+        </span>
       </form>
     </div>
   );

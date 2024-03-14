@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   fetchWeatherData,
   getCurrentLocationWeather,
-} from "../redux/weatherSlice";
+} from "../../redux/weatherSlice";
 import { useDispatch } from "react-redux";
-import FromWeatherUi from "./UI/FormWeatherUi";
-import ButtonLocation from "./UI/ButtonLocation";
+import FromWeatherUi from "../UI/FormWeatherUi";
+import ButtonLocation from "../UI/ButtonLocation";
 
 /**
  * Form component for weather search and location retrieval.
@@ -54,17 +54,15 @@ const FormWeather = () => {
   };
 
   return (
-    <div className="flex sm:justify-between flex-col sm:flex-row">
+    <div className="flex justify-end flex-row gap-3 mt-4">
       <FromWeatherUi
         submit={formCityHandler}
         cityInput={cityInput}
         inputCityHandler={inputCityHandler}
+        error={error}
       />
 
       <ButtonLocation getYourLocationWeather={getYourLocationWeather} />
-
-      {/* Display error message if there is an error */}
-      {error && <p className="text-red-500 mt-2">{error}</p>}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 /**
  * InputCitySearch component renders an input field to search for a city.
@@ -9,16 +9,16 @@ import React from 'react';
  */
 function InputCitySearch(props) {
   return (
-    <>
-      <h2 className="sm:mb-4 mb-2 font-semibold text-gray-900 dark:text-white">Saved Cities</h2>
+    <div className=" relative flex justify-end">
       <input
         type="text"
+        className=" outline-none placeholder:text-white bg-[#e5e7ebc4] border border-gray-300 rounded-md py-2 pl-6 pr-4 sm:mb-0  mb-2 "
         placeholder="Search for a city"
         value={props.searchTerm}
         onChange={props.handleSearch}
-        className="border border-gray-300 rounded-md py-2 px-4 mb-2 sm:max-w[300px]"
       />
-    </>
+      <i className="fa-solid fa-magnifying-glass text-white  absolute bottom-[21px] sm:bottom-[13px] right-[203px]"></i>
+    </div>
   );
 }
 

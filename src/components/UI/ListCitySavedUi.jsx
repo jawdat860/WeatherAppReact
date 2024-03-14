@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchWeatherData } from '../../redux/weatherSlice';
 import { deleteCityFromList } from '../../redux/citySlice';
+import { Link } from 'react-router-dom';
 
 /**
  * ListCitySavedUi component renders a saved city item in the list.
@@ -26,19 +27,15 @@ function ListCitySavedUi(props) {
   const handleDeleteCity = () => {
     dispatch(deleteCityFromList(props.city));
   };
-
   return (
     <li className="flex justify-between border-b border-gray-200 rounded-t-lg dark:border-gray-600 py-2 px-2">
-      <p className="cursor-pointer text-blue-500" onClick={handleCityClick}>
-        {props.city}
-      </p>
-      <button onClick={handleDeleteCity}>Delete</button>
+     <Link to="/WeatherAppReact" className="cursor-pointer text-blue-500" onClick={handleCityClick}> {props.city}</Link>
+
+     
+      <button onClick={handleDeleteCity}><i className="fa-solid fa-trash"></i></button>
     </li>
   );
 }
 
-ListCitySavedUi.propTypes = {
-  city: PropTypes.string.isRequired,
-};
 
 export default ListCitySavedUi;

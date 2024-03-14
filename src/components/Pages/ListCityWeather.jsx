@@ -1,30 +1,28 @@
-import Cookies from "js-cookie";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import ListCityWeatherUi from "./UI/ListCityWeatherUi";
+import Cookies from 'js-cookie';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import ListCityWeatherUi from '../UI/ListCityWeatherUi';
 
 /**
- * Component to display weather data for a city.
- * @param {object} props - The props for the component.
- * @param {object} props.addSitting - Object representing settings for additional weather information.
- * @param {boolean} props.addSitting.showHumidity - Flag indicating whether to show humidity.
- * @param {boolean} props.addSitting.showSunset - Flag indicating whether to show sunset time.
- * @param {boolean} props.addSitting.showPerceivedTemp - Flag indicating whether to show perceived temperature.
- * @returns {JSX.Element} The JSX element representing the weather data for the city.
+ * Functional component representing the list of city weather.
+ * @param {object} props - The props passed to the component.
+ * @returns {JSX.Element} ListCityWeather component JSX
  */
 const ListCityWeather = (props) => {
+  // State to manage additional settings for weather display
   const [addSitting, setAddSitting] = useState({
     showHumidity: false,
     showSunset: false,
     showPerceivedTemp: false,
   });
 
+  // Accessing weather data from Redux store
   const weatherData = useSelector((state) => state.weather.weatherData);
 
   /**
    * Function to calculate perceived temperature.
-   * @param {number} temperature - The temperature value.
-   * @param {number} humidity - The humidity value.
+   * @param {number} temperature - The temperature in Celsius.
+   * @param {number} humidity - The humidity percentage.
    * @returns {number} The perceived temperature.
    */
   function calculatePerceivedTemperature(temperature, humidity) {
@@ -34,8 +32,9 @@ const ListCityWeather = (props) => {
     return result.toFixed();
   }
 
+  // Effect to load settings from cookies when props change
   useEffect(() => {
-    const settingsFromCookies = Cookies.get("setting");
+    const settingsFromCookies = Cookies.get('setting');
     if (settingsFromCookies) {
       const result = JSON.parse(settingsFromCookies);
       setAddSitting(result);
@@ -43,7 +42,8 @@ const ListCityWeather = (props) => {
   }, [props]);
 
   return (
-    <div>
+    <div className="flex justify-center mt-4">
+      {/* Render weather data if available */}
       {weatherData && (
         <ListCityWeatherUi
           weatherData={weatherData}
@@ -54,4 +54,5 @@ const ListCityWeather = (props) => {
     </div>
   );
 };
+
 export default ListCityWeather;
