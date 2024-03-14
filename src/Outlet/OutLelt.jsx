@@ -16,8 +16,8 @@ function OutLelt() {
         <div className="flex-1 flex justify-end gap-4 items-center">
           {/* Navigation links */}
           <Link to="WeatherAppReact" className="font-bold hover:text-white text-[13px] lg:text-[16px]">Home</Link>
-          <Link to="settings" className="font-bold hover:text-white text-[13px] lg:text-[16px]">Settings</Link> {/* Link to the settings page */}
-          <Link to="history" className="font-bold hover:text-white text-[13px] lg:text-[16px]">History</Link> {/* Link to the history page */}
+          <Link to="WeatherAppReact/settings" className="font-bold hover:text-white text-[13px] lg:text-[16px]">Settings</Link> {/* Link to the settings page */}
+          <Link to="WeatherAppReact/history" className="font-bold hover:text-white text-[13px] lg:text-[16px]">History</Link> {/* Link to the history page */}
         </div>
       </nav>
       {/* Render nested routes */}

@@ -39,12 +39,12 @@ function App() {
   const route = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<OutLelt />}>
-        <Route path="WeatherAppReact" element={<Home settings={settings} />} />
+        <Route path="WeatherAppReact/" element={<Home settings={settings} />} />
         <Route
-          path="settings"
+          path="WeatherAppReact/settings"
           element={<SettingsPage onSaveSettings={onSaveSettings} />}
         />
-        <Route path="history" element={<ListCitySaved />} />
+        <Route path="WeatherAppReact/history" element={<ListCitySaved />} />
       </Route>
     )
   );
