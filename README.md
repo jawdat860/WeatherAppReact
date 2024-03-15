@@ -21,4 +21,4 @@ Application functionality:
 <p>openweathermap.org/API</p>
 <h1>How to use the application</h1>
 the main Page
-![Screen Shot 2024-03-15 at 15 43 50](https://github.com/jawdat860/WeatherAppReact/assets/83513860/92eb80a5-553b-49c0-bcc1-8c57b0fe955a)
+![image](https://github.com/jawdat860/WeatherAppReact/assets/83513860/92eb80a5-553b-49c0-bcc1-8c57b0fe955a)
