@@ -3,13 +3,12 @@
 <h1>Description</h1>
 <p>Client part for a web service with weather forecast. Data taken from openweathermap.org. 
 Application functionality:</p>
-<p>1.Ability to see the weather and the name of my location based on my current coordinates.</p>
+<p>1. Ability to see the weather and the name of my location based on my current coordinates.</p>
 <p>2. Ability to switch between saved cities.</p>
-<p>3. Ability to switch between saved cities.</p>
-<p>4. Ability to delete a saved city</p>
-<p>5. Settings page where you can add options to the weather display.</p>
-<p>6. Ability to search through saved cities.</p>
-<p>7. After reloading the page, the list of saved cities and the settings page retain their data.</p>
+<p>3. Ability to delete a saved city</p>
+<p>4. Settings page where you can add options to the weather display.</p>
+<p>5. Ability to search through saved cities.</p>
+<p>6. After reloading the page, the list of saved cities and the settings page retain their data.</p>
 <h1>Technologies used</h1>
 <io>
   <li>React</li>
